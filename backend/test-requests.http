@@ -1,0 +1,94 @@
+### CREATE five documents.
+POST http://localhost:3000/music HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Mind is Not Brain",
+    "artist": "Mock Orange", 
+    "recDate": "07-31-04",
+    "duration": 210,
+    "albumURL": "https://m.media-amazon.com/images/I/61E1K398RYL._UF1000,1000_QL80_.jpg"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/music HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Walton Viola Concerto",
+    "artist": "Roberto Diaz", 
+    "recDate": "10-27-14",
+    "duration": 1481,
+    "albumURL": "https://m.media-amazon.com/images/I/718Vc9N+DDL._UF1000,1000_QL80_.jpg"
+}
+
+### CREATE 3
+POST http://localhost:3000/music HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Passionfruit",
+    "artist": "Drake", 
+    "recDate": "03-28-2017",
+    "duration": 299,
+    "albumURL": "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg"
+}
+
+### CREATE 4
+POST http://localhost:3000/music HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Majority",
+    "artist": "Jan Degaetani", 
+    "recDate": "09-25-12",
+    "duration": 426,
+    "albumURL": "https://m.media-amazon.com/images/I/31vzc8tKPcL._QL70_FMwebp_.jpg"
+}
+
+### CREATE 5
+POST http://localhost:3000/music HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Guava Jelly",
+    "artist": "Ka'au Crater Boys", 
+    "recDate": "1998",
+    "duration": 224,
+    "albumURL": "https://i.scdn.co/image/ab67616d00001e025b3dc84794f1211c1cb55d05"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/music HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/music/64d4270e3450dcb8ce2ed663 HTTP/1.1
+
+
+### UPDATE one document's date, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/music/64d4270e3450dcb8ce2ed663 HTTP/1.1
+content-type: application/json
+
+{
+"title": "Mind is Not Brain",
+    "artist": "Mock Orange", 
+    "recDate": "07-31-05",
+    "duration": 210,
+    "albumURL": "https://m.media-amazon.com/images/I/61E1K398RYL._UF1000,1000_QL80_.jpg"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/music/64d4270e3450dcb8ce2ed663 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/music HTTP/1.1
+
